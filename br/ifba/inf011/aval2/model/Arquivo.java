@@ -4,14 +4,17 @@ import java.time.LocalDate;
 import java.util.List;
 
 import br.ifba.inf011.aval2.model.composite.AbstractEntrada;
+import br.ifba.inf011.aval2.model.strategy.DumpStrategy;
 
 public class Arquivo extends AbstractEntrada implements EntradaOperavel{
 	
 	private String conteudo;
+	private DumpStrategy dumpStrategy;
 
-	public Arquivo(String nome, LocalDate dataCriacao, String conteudo) {
+	public Arquivo(String nome, LocalDate dataCriacao, String conteudo, DumpStrategy dumpStrategy) {
 		super(nome, dataCriacao);
 		this.conteudo =  conteudo;
+		this.dumpStrategy = dumpStrategy;
 	}
 
 	@Override
@@ -46,7 +49,7 @@ public class Arquivo extends AbstractEntrada implements EntradaOperavel{
 
 	@Override
 	public String dump(){
-		return this.conteudo;
+		return this.dumpStrategy.dump(conteudo);
 	};
 
 	protected void setConteudo(String conteudo) {

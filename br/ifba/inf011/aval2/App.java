@@ -7,6 +7,8 @@ import br.ifba.inf011.aval2.model.Credencial;
 import br.ifba.inf011.aval2.model.Entrada;
 import br.ifba.inf011.aval2.model.EntradaOperavel;
 import br.ifba.inf011.aval2.model.Pasta;
+import br.ifba.inf011.aval2.model.strategy.ASCIIStrategy;
+import br.ifba.inf011.aval2.model.strategy.TextoStrategy;
 
 public class App {
 	
@@ -15,9 +17,9 @@ public class App {
 		
 		Credencial user01 = new Credencial("user01");
 		
-		EntradaOperavel a1 = new Arquivo("A1", LocalDate.now(), "00011000100011100000011111110101");
-		EntradaOperavel b1 = new Arquivo("B1", LocalDate.now(), "UM ARQUIVO TAMANHO GRANDE");
-		EntradaOperavel c1 = new Arquivo("C1", LocalDate.now(), "UM ARQUIVO TAMANHO MUITO MUITO GRANDE");
+		EntradaOperavel a1 = new Arquivo("A1", LocalDate.now(), "00011000100011100000011111110101", new TextoStrategy());
+		EntradaOperavel b1 = new Arquivo("B1", LocalDate.now(), "UM ARQUIVO TAMANHO GRANDE", new ASCIIStrategy());
+		EntradaOperavel c1 = new Arquivo("C1", LocalDate.now(), "UM ARQUIVO TAMANHO MUITO MUITO GRANDE", new TextoStrategy());
 		
 		Entrada a = new Pasta("A", LocalDate.now());
 		Entrada b = new Pasta("B", LocalDate.now());
