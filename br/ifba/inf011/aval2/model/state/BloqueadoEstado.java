@@ -2,13 +2,11 @@ package br.ifba.inf011.aval2.model.state;
 
 import javax.naming.OperationNotSupportedException;
 
-import br.ifba.inf011.aval2.model.Arquivo;
-
 public class BloqueadoEstado extends AbstractEstado {
 
     @Override
-    public Long getTamanho(Arquivo contexto) throws IllegalAccessException {
-        return contexto.getTamanho();
+    public Long getTamanho(String conteudo) throws IllegalAccessException {
+        return Long.valueOf(conteudo.length());
     }
 
     @Override

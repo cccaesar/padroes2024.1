@@ -5,6 +5,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import javax.naming.OperationNotSupportedException;
+
 import br.ifba.inf011.aval2.model.Arquivo;
 import br.ifba.inf011.aval2.model.Credencial;
 import br.ifba.inf011.aval2.model.Entrada;
@@ -78,6 +80,31 @@ public class LogOperacaoProxy implements EntradaOperavel{
 	@Override
 	public String dump(){
 		return this.arquivo.dump();
+	}
+
+	@Override
+	public void bloquear() throws OperationNotSupportedException {
+		this.arquivo.bloquear();
+	}
+
+	@Override
+	public void excluir() throws OperationNotSupportedException {
+		this.arquivo.excluir();
+	}
+
+	@Override
+	public void liberar() throws OperationNotSupportedException {
+		this.arquivo.liberar();
+	}
+
+	@Override
+	public void restaurar() throws OperationNotSupportedException {
+		this.arquivo.restaurar();
+	}
+
+	@Override
+	public void somenteLeitura() throws OperationNotSupportedException {
+		this.arquivo.somenteLeitura();
 	}
 
 }

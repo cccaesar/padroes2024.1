@@ -2,11 +2,11 @@ package br.ifba.inf011.aval2.model.strategy;
 
 import br.ifba.inf011.aval2.model.Conversor2Bin;
 
-public class ASCIIStrategy implements DumpStrategy {
+public class BinarioStrategy implements DumpStrategy {
     
     private Conversor2Bin conversor2Bin;
     
-    public ASCIIStrategy () {
+    public BinarioStrategy () {
         this.conversor2Bin = new Conversor2Bin();
     }
 

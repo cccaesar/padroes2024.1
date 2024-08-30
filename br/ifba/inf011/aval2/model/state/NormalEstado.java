@@ -2,24 +2,23 @@ package br.ifba.inf011.aval2.model.state;
 
 import javax.naming.OperationNotSupportedException;
 
-import br.ifba.inf011.aval2.model.Arquivo;
 import br.ifba.inf011.aval2.model.Credencial;
 
 public class NormalEstado extends AbstractEstado{
 
     @Override
-    public void escrever(Credencial credencial, String conteudo, Arquivo contexto) throws IllegalAccessException {
-        contexto.escrever(credencial, conteudo);
+    public String escrever(Credencial credencial, String conteudo) throws IllegalAccessException {
+        return conteudo;
     }
 
     @Override
-    public String ler(Credencial credencial, Arquivo contexto) throws IllegalAccessException {
-        return contexto.ler(credencial);
+    public String ler(Credencial credencial, String conteudo) throws IllegalAccessException {
+        return conteudo;
     }
 
     @Override
-    public Long getTamanho(Arquivo contexto) throws IllegalAccessException {
-        return contexto.getTamanho();
+    public Long getTamanho(String conteudo) throws IllegalAccessException {
+        return Long.valueOf(conteudo.length());
     }
 
     @Override

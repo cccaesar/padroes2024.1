@@ -40,17 +40,17 @@ public class Arquivo extends AbstractEntrada implements EntradaOperavel{
 
 	@Override
 	public Long getTamanho() throws IllegalAccessException{
-		return this.arquivoEstado.getTamanho(this);
+		return this.arquivoEstado.getTamanho(this.conteudo);
 	}
 	
 	@Override
 	public String ler(Credencial credencial) throws IllegalAccessException{
-		return this.arquivoEstado.ler(credencial, this);
+		return this.arquivoEstado.ler(credencial, this.conteudo);
 	}
 
 	@Override
 	public void escrever(Credencial credencial, String conteudo) throws IllegalAccessException {
-		this.arquivoEstado.escrever(credencial, conteudo, this);
+		this.conteudo = this.arquivoEstado.escrever(credencial, conteudo);
 	}
 
 	@Override
@@ -66,6 +66,7 @@ public class Arquivo extends AbstractEntrada implements EntradaOperavel{
 		return this.conteudo;
 	}
 
+	@Override
 	public void excluir() {
 		try {
 			this.arquivoEstado = this.arquivoEstado.excluir();
@@ -74,6 +75,7 @@ public class Arquivo extends AbstractEntrada implements EntradaOperavel{
 		}
 	}
 
+	@Override
 	public void restaurar() {
 		try {
 			this.arquivoEstado = this.arquivoEstado.restaurar();
@@ -82,6 +84,7 @@ public class Arquivo extends AbstractEntrada implements EntradaOperavel{
 		}
 	}
 
+	@Override
 	public void liberar() {
 		try {
 			this.arquivoEstado = this.arquivoEstado.liberar();
@@ -90,6 +93,7 @@ public class Arquivo extends AbstractEntrada implements EntradaOperavel{
 		}
 	}
 
+	@Override
 	public void bloquear() {
 		try {
 			this.arquivoEstado = this.arquivoEstado.bloquear();
@@ -98,6 +102,7 @@ public class Arquivo extends AbstractEntrada implements EntradaOperavel{
 		}
 	}
 
+	@Override
 	public void somenteLeitura() {
 		try {
 			this.arquivoEstado = this.arquivoEstado.somenteLeitura();

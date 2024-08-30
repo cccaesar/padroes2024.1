@@ -2,19 +2,18 @@ package br.ifba.inf011.aval2.model.state;
 
 import javax.naming.OperationNotSupportedException;
 
-import br.ifba.inf011.aval2.model.Arquivo;
 import br.ifba.inf011.aval2.model.Credencial;
 
 public class SomenteLeituraEstado extends AbstractEstado {
 
     @Override
-    public String ler(Credencial credencial, Arquivo contexto) throws IllegalAccessException {
-        return contexto.ler(credencial);
+    public String ler(Credencial credencial, String conteudo) throws IllegalAccessException {
+        return conteudo;
     }
 
     @Override
-    public Long getTamanho(Arquivo contexto) throws IllegalAccessException {
-        return contexto.getTamanho();
+    public Long getTamanho(String conteudo) throws IllegalAccessException {
+        return Long.valueOf(conteudo.length());
     }
 
     @Override
