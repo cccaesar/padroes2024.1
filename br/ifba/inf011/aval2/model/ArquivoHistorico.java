@@ -16,16 +16,13 @@ public class ArquivoHistorico extends Arquivo implements EntradaOperavel{
 	}
 
 	public void checkpoint() {
-		try {
-			this.historico.salvar(new ArquivoMemento(this, this.ler(null)));
-		} catch (IllegalAccessException e) {
-			e.printStackTrace();
-		}
+		this.historico.salvar(new ArquivoMemento(this.getConteudo()));
 	}
 
-	public void restaurar() {
+	public void restore() {
 		try {
-			this.historico.restaurar();
+			String conteudoAnterior = this.historico.restore();
+			this.setConteudo(conteudoAnterior);
 		} catch (NoSuchElementException e) {
 			e.printStackTrace();
 		}

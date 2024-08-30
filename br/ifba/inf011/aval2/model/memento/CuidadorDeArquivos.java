@@ -6,9 +6,8 @@ import java.util.NoSuchElementException;
 public class CuidadorDeArquivos {
     private Deque<ArquivoMemento> snapshots;
 
-    public void restaurar() throws NoSuchElementException {
-        ArquivoMemento snapshot = snapshots.pop();
-        snapshot.restore();
+    public String restore() throws NoSuchElementException {
+        return snapshots.pop().getConteudo();
     }
 
     public void salvar(ArquivoMemento snapshot) {

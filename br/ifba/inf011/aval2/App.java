@@ -55,7 +55,12 @@ public class App {
 		} catch (IllegalAccessException e) {
 			System.out.println("NÃO FOI POSSIVEL LER DE A1");
 		}			
-		
+		try {
+			System.out.println("Dump\t" + a1.dump());
+			System.out.println("Leitura\t" + a1.ler(user01));
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 		System.out.println(raiz.getNome() + ": " + raiz.getTamanho() + "K");
 	}
 	
