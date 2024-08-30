@@ -50,7 +50,7 @@ public class Arquivo extends AbstractEntrada implements EntradaOperavel{
 	@Override
 	public String dump(){
 		return this.dumpStrategy.dump(conteudo);
-	};
+	}
 
 	protected void setConteudo(String conteudo) {
 		this.conteudo = conteudo;
