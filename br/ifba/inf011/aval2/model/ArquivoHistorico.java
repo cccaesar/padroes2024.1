@@ -13,6 +13,7 @@ public class ArquivoHistorico extends Arquivo implements EntradaOperavel{
 
 	public ArquivoHistorico(String nome, LocalDate dataCriacao, String conteudo, DumpStrategy dumpStrategy) {
 		super(nome, dataCriacao, conteudo, dumpStrategy);
+		this.historico = new CuidadorDeArquivos();
 	}
 
 	public void checkpoint() {

@@ -5,6 +5,7 @@ import java.time.LocalDate;
 import javax.naming.OperationNotSupportedException;
 
 import br.ifba.inf011.aval2.model.Arquivo;
+import br.ifba.inf011.aval2.model.ArquivoHistorico;
 import br.ifba.inf011.aval2.model.Credencial;
 import br.ifba.inf011.aval2.model.Entrada;
 import br.ifba.inf011.aval2.model.EntradaOperavel;
@@ -67,6 +68,7 @@ public class App {
 		EntradaOperavel a1 = new Arquivo("A1", LocalDate.now(), "00011000100011100000011111110101", new TextoStrategy());
 		EntradaOperavel a2 = new Arquivo("A2", LocalDate.now(), "O Rio de Janeiro continua lindo", new BinarioStrategy());
 		LogOperacaoProxy proxy = new LogOperacaoProxy(new Arquivo ("A3", LocalDate.now(), "Testando o proxy", new BinarioStrategy()));
+		ArquivoHistorico ah1 = new ArquivoHistorico("AH1", LocalDate.now(), "Blá blá blá", new BinarioStrategy());
 		try {
 			System.out.println(a1.getNome());
 			System.out.println("Dump\t" + a1.dump());
@@ -104,6 +106,18 @@ public class App {
 			proxy.liberar();
 			proxy.escrever(user01, "Escrevendo no arquivo através do proxy");
 			System.out.println(proxy.doLog());
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
+		try {
+			ah1.checkpoint();
+			System.out.println("Conteudo de 'AH1' antes de ser sobrescrito: " + ah1.ler(user01));
+			ah1.escrever(user01, "Aaaaaah!");
+			System.out.println("Conteudo de 'AH1' após ser sobrescrito: " + ah1.ler(user01));
+			ah1.restore();
+			System.out.println("Conteudo de 'AH1' após seu conteudo ser restaurado: " + ah1.ler(user01));
+
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
