@@ -3,7 +3,7 @@ package br.ifba.inf011.aval2.model.state;
 import javax.naming.OperationNotSupportedException;
 
 import br.ifba.inf011.aval2.model.Credencial;
-
+/**Interface do Estado*/
 public interface EstadoInterface {
     public String escrever(Credencial credencial, String conteudo) throws IllegalAccessException;
     public String ler(Credencial credencial, String conteudo) throws IllegalAccessException;

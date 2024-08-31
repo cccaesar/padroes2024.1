@@ -3,7 +3,7 @@ package br.ifba.inf011.aval2.model.state;
 import javax.naming.OperationNotSupportedException;
 
 import br.ifba.inf011.aval2.model.Credencial;
-
+/**Estado concreto*/
 public class SomenteLeituraEstado extends AbstractEstado {
 
     @Override

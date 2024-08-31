@@ -7,6 +7,7 @@ import br.ifba.inf011.aval2.model.memento.ArquivoMemento;
 import br.ifba.inf011.aval2.model.memento.CuidadorDeArquivos;
 import br.ifba.inf011.aval2.model.strategy.DumpStrategy;
 
+/**ArquivoHistorico é a classe originadora do padrão memento */
 public class ArquivoHistorico extends Arquivo implements EntradaOperavel{
 
 	private CuidadorDeArquivos historico;

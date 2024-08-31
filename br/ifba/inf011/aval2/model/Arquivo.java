@@ -10,6 +10,7 @@ import br.ifba.inf011.aval2.model.state.EstadoInterface;
 import br.ifba.inf011.aval2.model.state.NormalEstado;
 import br.ifba.inf011.aval2.model.strategy.DumpStrategy;
 
+/**Arquivo é tanto o contexto do padrão strategy quanto do padrão state */
 public class Arquivo extends AbstractEntrada implements EntradaOperavel{
 	
 	private String conteudo;

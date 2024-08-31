@@ -3,7 +3,7 @@ package br.ifba.inf011.aval2.model.memento;
 import java.util.Deque;
 import java.util.LinkedList;
 import java.util.NoSuchElementException;
-
+/**CuidadorDeArquivos é a classe cuidadora do padrão memento*/
 public class CuidadorDeArquivos {
     private Deque<ArquivoMemento> snapshots;
 

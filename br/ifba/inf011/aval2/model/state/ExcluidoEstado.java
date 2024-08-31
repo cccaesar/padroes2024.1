@@ -2,6 +2,7 @@ package br.ifba.inf011.aval2.model.state;
 
 import javax.naming.OperationNotSupportedException;
 
+/**Estado concreto*/
 public class ExcluidoEstado extends AbstractEstado {
 
     @Override

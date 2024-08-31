@@ -1,6 +1,6 @@
 package br.ifba.inf011.aval2.model.memento;
 
-
+/**ArquivoMemento é a classe Memento do padrão memento*/
 public class ArquivoMemento {
     private final String conteudo;
 
