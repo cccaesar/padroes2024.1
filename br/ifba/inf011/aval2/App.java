@@ -71,7 +71,7 @@ public class App {
 		ArquivoHistorico ah1 = new ArquivoHistorico("AH1", LocalDate.now(), "Blá blá blá", new BinarioStrategy());
 		try {
 			System.out.println(a1.getNome());
-			System.out.println("Dump\t" + a1.dump());
+			System.out.println("Dump\t" + a1.dump(user01));
 			System.out.println("Leitura\t" + a1.ler(user01));
 			System.out.println("-------------");
 		} catch (Exception e) {
@@ -79,7 +79,7 @@ public class App {
 		}
 		try {
 			System.out.println(a2.getNome());
-			System.out.println("Dump\t" + a2.dump());
+			System.out.println("Dump\t" + a2.dump(user01));
 			System.out.println("Leitura\t" + a2.ler(user01));
 			System.out.println("-------------");
 		} catch (Exception e) {

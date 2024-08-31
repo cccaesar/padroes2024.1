@@ -78,8 +78,12 @@ public class LogOperacaoProxy implements EntradaOperavel{
 	}
 
 	@Override
-	public String dump(){
-		return this.arquivo.dump();
+	public String dump(Credencial credencial){
+		String conteudo = this.arquivo.dump(credencial); 
+		Integer acessado = (this.log.get(credencial) == null) ? 0 : this.log.get(credencial);
+		acessado++;
+		this.log.put(credencial, acessado);
+		return conteudo;
 	}
 
 	@Override

@@ -54,7 +54,7 @@ public class Arquivo extends AbstractEntrada implements EntradaOperavel{
 	}
 
 	@Override
-	public String dump(){
+	public String dump(Credencial credencial){
 		return this.dumpStrategy.dump(conteudo);
 	}
 
